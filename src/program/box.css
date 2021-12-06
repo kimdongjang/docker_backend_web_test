@@ -1,0 +1,76 @@
+.program_box {
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #eeebf2;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ease-out;
+}
+
+.program_box:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 25px;
+    top: 45%;
+    width: 20px;
+    height: 20px;
+    background: #f73f38;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .2s ease-out;
+}
+
+.program_box .pr_left {
+    position: relative;
+    width: 88%;
+}
+
+
+.program_box .pr_left .pr_tl {
+    position: relative;
+    font-size: 1.9em;
+    font-family: 'GongGothicMedium', 'sans-serif';
+    word-break: keep-all;
+    color: #32007c;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.program_box .pr_left .pr_tl em {
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    font-weight: 700;
+    word-break: keep-all;
+    color: #32007c;
+    margin-right: 12px;
+}
+
+.program_box .pr_left .pr_tl .pr_cate {
+    color: #f73f38;
+    font-size: 1.0em;
+    font-family: 'Montserrat', 'GongGothicMedium', 'sans-serif';
+    font-size: 0.45em;
+    margin-left: 20px;
+}
+.program_box .pr_left .pr_name {
+    font-size: 1.0em;
+    font-family: 'GongGothicLight', 'sans-serif';
+    word-break: keep-all;
+    color: #222;
+    margin-top: 15px;
+}
+
+em {
+    font-style: normal;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

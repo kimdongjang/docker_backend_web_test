@@ -1,0 +1,8 @@
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Montserrat', sans-serif;;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Noto+Sans+KR&display=swap),
+  }
