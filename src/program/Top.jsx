@@ -32,7 +32,7 @@ export default function Top() {
                         프로그램
                     </h2>
                 </div>
-                
+
                 <Box/>
                 
             </div>
