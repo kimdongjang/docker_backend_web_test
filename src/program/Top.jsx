@@ -3,34 +3,62 @@ import './program.css';
 import './inner.css';
 import './box.css';
 
+import ThemeContext from './ThemeContext';
+
 import Box from './Box'
 import Nav from './Nav'
+import ThemeButton from './ThemeButton'
 import AnimateTest from './AnimateTest'
+import ToggleMenu from './ToggleMenu';
+import Search from './Search';
 
-export default function Top() {
+class Top extends React.Component{
+    state = {theme: 'light'};
 
-    return (
-        <div className='wrap'>
-            <div className='sec_top'>                
-                <div className='header'>
-                    <div className='navi_pc'>
-                        <Nav/>
-                    </div>
-                </div>    
-            </div>
-            <div className='ctn_wp ct_bg'>
-                <div className='ctn_inner_ty2'>
-                    <AnimateTest className='ctn_inner_ty2'/>
+    changeTheme = () => {
+        this.setState(({ theme }) => ({
+            theme: theme === "light" ? "dark" : "light"
+        }));
+      };
 
-                    <h2 className='ctn_tl'>
-                        프로그램
-                    </h2>
+
+    render(){
+        const {theme} = this.state;
+
+        return (
+            <div className='wrap'>
+                <div className='sec_top'>                
+                    <div className='header'>
+                        <div className='navi_pc'>      
+                        </div>                        
+                    </div>    
                 </div>
-                <Box/>
-            </div>
-            <div>
-            </div>
+                <div className='ctn_wp ct_bg'>
+                    <div className='ctn_inner_ty2'>    
+                        <Nav/>          
+                        <ThemeContext.Provider value={theme}>
+                            <ThemeButton changeTheme={this.changeTheme}/>
+                        </ThemeContext.Provider>
+                        
+                        <Search/>
+                        
 
-        </div>
-    )
+                        <ToggleMenu />
+
+                        <AnimateTest className='ctn_inner_ty2'/>
+    
+                        <h2 className='ctn_tl'>
+                            프로그램
+                        </h2>
+                    </div>
+                    <Box/>
+                </div>
+                <div>
+                </div>
+    
+            </div>
+        )
+    }
 }
+
+export default Top;
