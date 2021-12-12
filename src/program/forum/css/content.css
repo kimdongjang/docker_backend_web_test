@@ -1,0 +1,120 @@
+.top_guide{
+    position: relative;
+    text-align: center;
+    font-size: 1.1em;
+    color: #666666;
+    font-weight:  500;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+    line-height: 1.7;
+    margin-top: 60px;
+
+
+}
+
+.div{
+    margin:0;
+    padding: 0;
+    border: 0;
+    font-style: normal;    
+}
+
+.mo_wp {
+    position: relative;
+    color: #3a4056;
+    font-family: 'Montserrat', 'Noto Sans KR', 'sans-serif';
+}
+
+.participation_wp{
+    position: relative;
+    margin-top: 45px;
+    border-top: 1px solid #32007c;
+    border-bottom: 1px soild #ebebeb;
+    padding: 40px 3%;
+}
+
+.tb-wp{
+    margin-top: 70px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+colgroup {
+    display: table-column-group;
+}
+
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+tr{
+    display: table-row;
+    vertical-align: inherit;
+}
+
+th{
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+table.tb_write th{    
+    color: #150e1e;
+    background: none;
+    font-size: 1.25em;
+    padding: 10px 5px;
+    font-weight: normal;
+    text-align: left;
+}
+
+table.tb_write td {
+    font-size: 1.2em;
+    padding: 15px 5px;
+    text-align: left;
+    color: #666;
+    background: none;
+}
+
+table.tb_write th:before{    
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #f73f38;
+    content: " ";
+    margin-right: 11px;
+}
+.checks {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.checks input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+input[type="radio" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 0px 5px;
+    padding: initial;
+    border: initial;
+}
