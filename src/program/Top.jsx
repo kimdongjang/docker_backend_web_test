@@ -40,7 +40,7 @@ class Top extends React.Component{
                         <ThemeContext.Provider value={theme}>
                             <ThemeButton changeTheme={this.changeTheme}/>
                         </ThemeContext.Provider>
-                        
+
                         <Search/>
                         
 
