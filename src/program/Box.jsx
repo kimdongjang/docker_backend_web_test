@@ -1,7 +1,7 @@
 import React from 'react';
-import './program.css';
-import './inner.css';
-import './box.css';
+import './css/program.css';
+import './css/inner.css';
+import './css/box.css';
 
 export default function Box() {
     return (
