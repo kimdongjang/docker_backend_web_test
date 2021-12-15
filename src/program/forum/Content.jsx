@@ -4,9 +4,6 @@ import TopGuide from './TopGuide'
 import Writer from './Writer';
 
 export default class Content extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div>

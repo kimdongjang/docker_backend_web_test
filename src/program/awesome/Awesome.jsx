@@ -3,6 +3,15 @@ import React, { Component } from 'react'
 import './awesome.css'
 
 export default class Awesome extends Component {
+    constructor(props){
+        super(props)
+    }
+    
+    componentDidMount() {
+        fetch('awesome')
+        .then(res=>res.json())
+    }
+
     render() {
         return (
             <div>
@@ -14,11 +23,11 @@ export default class Awesome extends Component {
                         </div>
                         <nav class="menubar">
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Product</a></li>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li>Home</li>
+                                <li>Product</li>
+                                <li>Research</li>
+                                <li>About Us</li>
+                                <li>Contact</li>
                             </ul>
                         </nav>
                         <div class="signButton">
