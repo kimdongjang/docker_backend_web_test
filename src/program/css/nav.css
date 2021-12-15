@@ -1,0 +1,12 @@
+.nav1 {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav1 .sub1 {
+    float: right;
+    display: block;
+    background-color: #ffdab9;
+    padding: 8px;
+}

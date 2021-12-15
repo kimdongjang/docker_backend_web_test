@@ -1,6 +1,8 @@
 import { render } from "@testing-library/react";
 import { useState } from "react";
 
+import './css/nav.css'
+
 
 export default function Nav() {
     const [datas, setDatas] = useState(
@@ -44,9 +46,9 @@ export default function Nav() {
     );
 
     const menu = datas.map((param) => (
-        <ul>{param.name}
+        <ul className='nav1'>{param.name}
             {param.data.map((param) => (
-                <li>{param.name}</li>
+                <li className='nav1 sub1'>{param.name}</li>
             ))}
         </ul>
     ));

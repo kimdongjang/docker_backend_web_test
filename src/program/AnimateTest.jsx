@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { useControls } from "leva";
 
-import "./styles.css";
+import "./css/styles.css";
 
 const calc = (x, y, rect) => [
   -(y - rect.top - rect.height / 2) / 5,
