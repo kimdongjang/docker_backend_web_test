@@ -2,11 +2,16 @@ FROM node:14.15.3-alpine
 MAINTAINER kimdongjang
 
 RUN mkdir /app
-WORKDIR /app
+WORKDIR /usr/src/app
+
+COPY package.json .
+
 ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json /app/package.json
 
 RUN npm install --no-cache
 
-COPY . /app
+COPY . .
+
+EXPOSE 8080
+
 CMD ["npm", "run", "dev"]
