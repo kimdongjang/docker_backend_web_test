@@ -1,9 +1,9 @@
 services:
   backend:
-    build:
+    build: 
       args:
       - NODE_ENV=development
-      context: backend
+      context: servers
     command: npm run start-watch
     environment:
       - DATABASE_DB=example
@@ -13,31 +13,28 @@ services:
       - NODE_ENV=development
     ports:
       - 80:80
-      - 9229:9229
-      - 9230:9230
-    secrets:
-      - db-password
+      - 8080:8080
     volumes:
-      - ./backend/src:/server/src:ro
-      - ./backend/package.json:/server/package.json
-      - ./backend/package-lock.json:/server/package-lock.json
+      - ./servers/src:/server/src:ro
+      - ./servers/package.json:/server/package.json
+      - ./servers/package-lock.json:/server/package-lock.json
       - back-notused:/opt/app/node_modules
     networks:
       - public
       - private
   frontend:
     build:
-      context: frontend
+      context: client
       target: development
     ports:
       - 3000:3000
     volumes:
-      - ./frontend/src:/server/src
+      - ./client/src:/server/src
       - /server/node_modules
     networks:
       - public
     depends_on:
-      - backend
+      - servers
 networks:
   public:
   private:

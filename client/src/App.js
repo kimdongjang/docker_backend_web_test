@@ -2,9 +2,9 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
-import Top from './client/program/Top';
-import Forum from './client/program/forum/Forum';
-import Awesome from './client/program/awesome/Awesome';
+import Top from './program/Top';
+import Forum from './program/forum/Forum';
+import Awesome from './program/awesome/Awesome';
 
 import React, { Component } from 'react'
 

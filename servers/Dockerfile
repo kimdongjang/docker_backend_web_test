@@ -13,7 +13,7 @@ WORKDIR /server
 # default to port 80 for node, and 9229 and 9230 (tests) for debug
 ARG PORT=80
 ENV PORT $PORT
-EXPOSE $PORT 9229 9230
+EXPOSE $PORT 8080
 
 COPY package.json /server/package.json
 COPY package-lock.json /server/package-lock.json
