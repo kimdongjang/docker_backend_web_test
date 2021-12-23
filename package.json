@@ -1,0 +1,29 @@
+{
+  "name": "webpage_test",
+  "version": "1.0.0",
+  "description": "> docker + nginx + express + react",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "./source/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd ./source/client && npm run start",
+    "server": "cd ./source/servers && npm run server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimdongjang/webpage_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimdongjang/webpage_test/issues"
+  },
+  "homepage": "https://github.com/kimdongjang/webpage_test#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}

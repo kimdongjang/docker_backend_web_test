@@ -1,42 +1,26 @@
 services:
-  backend:
-    build: 
-      args:
-      - NODE_ENV=development
-      context: servers
-    command: npm run start-watch
-    environment:
-      - DATABASE_DB=example
-      - DATABASE_USER=root
-      - DATABASE_PASSWORD=/run/secrets/db-password
-      - DATABASE_HOST=db
-      - NODE_ENV=development
+  nginx_proxy:
+    image: nginx:latest
+    container_name: nginx_proxy2
+    restart: "on-failure"
     ports:
       - 80:80
-      - 8080:8080
     volumes:
-      - ./servers/src:/server/src:ro
-      - ./servers/package.json:/server/package.json
-      - ./servers/package-lock.json:/server/package-lock.json
-      - back-notused:/opt/app/node_modules
-    networks:
-      - public
-      - private
-  frontend:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./source/client/build:/usr/share/nginx/html
+
+  server:
     build:
-      context: client
-      target: development
-    ports:
-      - 3000:3000
+      context: ./source/servers
+    container_name: express_server2
+    restart: "on-failure"
+    expose:
+      - 8080
     volumes:
-      - ./client/src:/server/src
-      - /server/node_modules
-    networks:
-      - public
-    depends_on:
-      - servers
-networks:
-  public:
-  private:
-volumes:
-  back-notused:
+      - './source/servers:/app'
+      - '/app/node_modules'
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
