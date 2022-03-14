@@ -6,7 +6,6 @@ MAINTAINER kimdongjang
 ARG NODE_ENV=production
 ENV NODE_ENV $NODE_ENV
 
-
 WORKDIR /server
 
 
@@ -17,11 +16,12 @@ EXPOSE $PORT 8080
 
 COPY package.json /server/package.json
 COPY package-lock.json /server/package-lock.json
-RUN npm ci
+RUN npm install --no-cache
 
 
 # copy in our source code last, as it changes the most
-COPY . /code
+#COPY . /code
+COPY . /server
 
 # if you want to use npm start instead, then use `docker run --init in production`
 # so that signals are passed properly. Note the code in index.js is needed to catch Docker signals
