@@ -14,7 +14,7 @@ services:
   server:
     build:
       context: ./backend/
-    container_name: server
+    container_name: backend_server
     restart: "on-failure"
     expose:
       - 8080
