@@ -1,10 +1,13 @@
 version: '3.3'
 
+# 컨테이너에 작동시킬 서비스 그룹(nginx proxy + backend server를 묶어서 관리)
 services:
   nginx_proxy:
+    # docker hub에서 이미지 가져옴
     image: nginx:latest
     container_name: nginx_proxy
     restart: "on-failure"
+    # 포워딩할 포트. 호스트 80으로 들어오면 컨테이너 80으로 포워딩
     ports:
       - 80:80
     volumes:
@@ -12,10 +15,13 @@ services:
       - ./frontend/build:/usr/share/nginx/html
 
   server:
+    # dockerfile을 이용해 docker build 하는 부분
     build:
+      # 해당 dockerfile의 경로
       context: ./backend/
     container_name: backend_server
     restart: "on-failure"
+    # 노출시킬 포트
     expose:
       - 8080
     volumes:
